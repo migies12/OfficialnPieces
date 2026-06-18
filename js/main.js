@@ -4,8 +4,8 @@
    Instructions: see README.md
 ────────────────────────────────────────────────────────────────────── */
 
-const CALENDAR_ID = '52060da14521775b9109fb140977d12c1226f1860d0d23dc6fc53b11de0922f7@group.calendar.google.com'; 
-const API_KEY     = 'AIzaSyDuxBa91cEw0EUtAhPuTKVd0wGQne3XkDM';   // Google Calendar API key
+const CALENDAR_ID = '__GOOGLE_CAL_ID__';
+const API_KEY     = '__GOOGLE_API_KEY__';
 
 /* ── Nav scroll state ──────────────────────────────────────────────── */
 const nav = document.getElementById('nav');
