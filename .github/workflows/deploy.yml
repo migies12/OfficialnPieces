@@ -30,8 +30,19 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_CAL_ID: ${{ secrets.GOOGLE_CAL_ID }}
         run: |
+          set -e
+          if [ -z "${GOOGLE_API_KEY}" ]; then
+            echo "ERROR: GOOGLE_API_KEY secret is empty or not set" >&2
+            exit 1
+          fi
+          if [ -z "${GOOGLE_CAL_ID}" ]; then
+            echo "ERROR: GOOGLE_CAL_ID secret is empty or not set" >&2
+            exit 1
+          fi
           sed -i "s|__GOOGLE_API_KEY__|${GOOGLE_API_KEY}|g" js/main.js
           sed -i "s|__GOOGLE_CAL_ID__|${GOOGLE_CAL_ID}|g"   js/main.js
+          echo "Secrets injected successfully."
+          grep -c "GOOGLE" js/main.js && echo "WARNING: placeholders may still remain" || echo "No placeholders remain."
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
