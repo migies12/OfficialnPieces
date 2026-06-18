@@ -4,8 +4,8 @@
    Instructions: see README.md
 ────────────────────────────────────────────────────────────────────── */
 
-const CALENDAR_ID = '';   // e.g. 'xxxx@group.calendar.google.com'
-const API_KEY     = '';   // Google Calendar API key
+const CALENDAR_ID = '52060da14521775b9109fb140977d12c1226f1860d0d23dc6fc53b11de0922f7@group.calendar.google.com'; 
+const API_KEY     = 'AIzaSyDuxBa91cEw0EUtAhPuTKVd0wGQne3XkDM';   // Google Calendar API key
 
 /* ── Nav scroll state ──────────────────────────────────────────────── */
 const nav = document.getElementById('nav');
@@ -123,10 +123,6 @@ function renderShowRow(event) {
 
 function renderPlaceholderShows() {
   const placeholder = [
-    { date: 'Jul 12, 2026', venue: 'The Masquerade',     city: 'Atlanta, GA' },
-    { date: 'Jul 19, 2026', venue: 'Knitting Factory',   city: 'Brooklyn, NY' },
-    { date: 'Aug 02, 2026', venue: 'Bottom of the Hill', city: 'San Francisco, CA' },
-    { date: 'Aug 14, 2026', venue: 'Empty Bottle',       city: 'Chicago, IL' },
   ];
   return placeholder.map(s => `
     <div class="show-row">
