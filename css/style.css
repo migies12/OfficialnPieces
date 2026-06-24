@@ -459,6 +459,58 @@ h2 {
   letter-spacing: 1px;
 }
 
+/* ── Press ───────────────────────────────────────────────────────────── */
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.press-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px 28px 24px;
+  background: var(--subtle);
+  border: 0.5px solid var(--border);
+  border-radius: 2px;
+  transition: border-color 0.2s;
+}
+.press-card:hover { border-color: rgba(255,255,255,0.2); }
+
+.press-publication {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--label-color);
+}
+
+.press-title {
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.press-excerpt {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.85;
+  flex: 1;
+}
+
+.press-cta {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+  transition: color 0.2s;
+}
+.press-card:hover .press-cta { color: var(--text); }
+
 /* ── Footer ──────────────────────────────────────────────────────────── */
 .footer {
   background: #080808;
@@ -546,6 +598,7 @@ h2 {
     gap: 12px;
   }
   .show-ticket { display: none; }
+  .press-grid { grid-template-columns: 1fr; }
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
