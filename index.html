@@ -197,6 +197,36 @@
 
   <!-- FOOTER / CONTACT -->
   <footer class="footer" id="contact">
+
+    <div class="container book-section">
+      <div class="section-header reveal">
+        <p class="label">Get in touch</p>
+        <h2>Book a Gig</h2>
+      </div>
+      <form class="book-form reveal" id="book-form" novalidate>
+        <div class="book-row">
+          <div class="book-field">
+            <label class="book-label" for="book-name">Name / Organization</label>
+            <input class="book-input" type="text" id="book-name" placeholder="The Fillmore, Vancouver" />
+          </div>
+          <div class="book-field">
+            <label class="book-label" for="book-date">Event Date</label>
+            <input class="book-input" type="text" id="book-date" placeholder="Aug 15, 2026" />
+          </div>
+        </div>
+        <div class="book-field">
+          <label class="book-label" for="book-venue">Venue &amp; Location</label>
+          <input class="book-input" type="text" id="book-venue" placeholder="The Commodore Ballroom, Vancouver, BC" />
+        </div>
+        <div class="book-field">
+          <label class="book-label" for="book-message">Details</label>
+          <textarea class="book-input book-textarea" id="book-message" rows="4" placeholder="Tell us about the event, expected attendance, lineup, etc."></textarea>
+        </div>
+        <button type="submit" class="btn">Send Booking Request</button>
+      </form>
+    </div>
+
+    <div class="footer-bar">
     <div class="container footer-inner">
       <div class="footer-left">
         <p class="footer-logo">In Pieces</p>
@@ -229,6 +259,7 @@
         </a>
       </div>
     </div>
+    </div><!-- /.footer-bar -->
   </footer>
 
   <script src="js/main.js"></script>

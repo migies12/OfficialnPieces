@@ -144,3 +144,29 @@ function escHtml(s) {
 function escAttr(s) { return escHtml(s); }
 
 loadShows();
+
+/* ── Book a Gig form ───────────────────────────────────────────────── */
+document.getElementById('book-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name    = document.getElementById('book-name').value.trim();
+  const date    = document.getElementById('book-date').value.trim();
+  const venue   = document.getElementById('book-venue').value.trim();
+  const message = document.getElementById('book-message').value.trim();
+
+  const subject = encodeURIComponent(
+    'Booking Inquiry' + (name ? ' — ' + name : '')
+  );
+
+  const lines = ['Hi In Pieces,\n'];
+  if (name)    lines.push('Name / Organization: ' + name);
+  if (date)    lines.push('Event Date: ' + date);
+  if (venue)   lines.push('Venue & Location: ' + venue);
+  if (message) lines.push('\n' + message);
+  lines.push('\nLooking forward to hearing from you.');
+
+  const body = encodeURIComponent(lines.join('\n'));
+
+  window.location.href =
+    'mailto:officialinpieces@gmail.com?subject=' + subject + '&body=' + body;
+});

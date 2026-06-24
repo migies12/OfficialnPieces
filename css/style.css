@@ -511,12 +511,73 @@ h2 {
 }
 .press-card:hover .press-cta { color: var(--text); }
 
+/* ── Book a Gig ──────────────────────────────────────────────────────── */
+.book-section {
+  padding: var(--section-py) 0 60px;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.book-section .section-header {
+  text-align: center;
+}
+
+.book-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.book-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.book-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--label-color);
+}
+
+.book-input {
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.15);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.book-input::placeholder { color: rgba(255,255,255,0.2); }
+.book-input:focus { border-bottom-color: rgba(255,255,255,0.5); }
+
+.book-textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+
 /* ── Footer ──────────────────────────────────────────────────────────── */
 .footer {
   background: #080808;
   border-top: 0.5px solid var(--border);
+}
+
+.footer-bar {
+  border-top: 0.5px solid var(--border);
   padding: 40px 0;
 }
+
 .footer-inner {
   display: flex;
   align-items: center;
@@ -599,6 +660,7 @@ h2 {
   }
   .show-ticket { display: none; }
   .press-grid { grid-template-columns: 1fr; }
+  .book-row { grid-template-columns: 1fr; }
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
