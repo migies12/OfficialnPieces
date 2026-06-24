@@ -619,17 +619,27 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+  .about-grid { grid-template-columns: 1fr; }
   .about-photo { order: -1; }
-  .music-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .music-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Touch devices: always show the music play overlay */
+@media (hover: none) {
+  .music-link {
+    opacity: 1;
+    background: rgba(13,13,13,0.45);
   }
 }
 
 @media (max-width: 640px) {
   :root { --section-py: 60px; }
+
+  /* Use small viewport height so hero isn't clipped by mobile browser chrome */
+  .hero {
+    height: 100svh;
+    min-height: 480px;
+  }
 
   .container { padding: 0 20px; }
 
@@ -641,30 +651,53 @@ h2 {
     left: 0; right: 0;
     flex-direction: column;
     background: rgba(13,13,13,0.98);
-    padding: 24px 20px 32px;
-    gap: 20px;
+    padding: 16px 20px 28px;
+    gap: 0;
     border-bottom: 0.5px solid var(--border);
   }
+  /* Bigger tap targets in mobile nav */
+  .nav-links a {
+    padding: 13px 0;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-links a:last-child { border-bottom: none; }
   .nav-links.open { display: flex; }
   .nav-toggle { display: flex; }
 
-  .members-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .members-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Center the lone 5th member card */
+  .member-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 5px);
+    margin: 0 auto;
   }
-  .music-grid {
-    grid-template-columns: 1fr;
-  }
+
+  .music-grid { grid-template-columns: 1fr; }
+
   .show-row {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 72px 1fr;
     gap: 12px;
   }
   .show-ticket { display: none; }
+
   .press-grid { grid-template-columns: 1fr; }
+  .press-card { padding: 20px; }
+
   .book-row { grid-template-columns: 1fr; }
+
   .footer-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 20px;
   }
-  .footer-socials { flex-wrap: wrap; gap: 16px; }
+  /* 2×2 grid instead of uneven flex-wrap */
+  .footer-socials {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 16px 32px;
+    justify-content: center;
+  }
 }
