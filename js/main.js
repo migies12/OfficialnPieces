@@ -104,7 +104,8 @@ function renderShowRow(event) {
   /* parse "Venue Name — City, State" from event title or use title + location */
   const rawTitle    = event.summary || 'TBA';
   const location    = event.location || '';
-  const ticketUrl   = (event.description || '').match(/https?:\/\/\S+/)?.[0] || event.htmlLink || '#';
+  const desc        = (event.description || '').replace(/<[^>]*>/g, ' ');
+  const ticketUrl   = desc.match(/https?:\/\/[^\s<>"]+/)?.[0] || event.htmlLink || '#';
 
   const [venuePart, cityPart] = location.includes(',')
     ? [rawTitle, location]
